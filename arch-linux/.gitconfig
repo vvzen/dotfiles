@@ -1,0 +1,3 @@
+[alias]
+    nicelog = log --all --graph --decorate --oneline
+	graph = log --graph --all --oneline --decorate --pretty=\"format:%C(yellow)%h %Cblue%an %Cgreen%ar%C(yellow bold)%d%Creset%n%s\"
