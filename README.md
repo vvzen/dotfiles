@@ -29,5 +29,5 @@ $ sudo pacman -S bat
 I use [git-delta](https://github.com/dandavison/delta) for most of my diffs.
 
 ```bash
-$ sudo pacman -S git-delta`
+$ sudo pacman -S git-delta
 ```
