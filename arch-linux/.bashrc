@@ -17,3 +17,9 @@ export PS1="\[$(tput bold)\]\w\[$(tput sgr0)\] \[$(tput sgr0)\]\[$(tput bold)\]\
 export LSCOLORS='di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43'
 # Different colors for different extensions
 eval "$(dircolors)"
+
+# Rust
+. "$HOME/.cargo/env"
+
+# Wezterm
+alias wezterm="cd ~/dev/workflow/wezterm && cargo run --release --bin wezterm -- start"
