@@ -9,6 +9,7 @@
 alias hx='helix'
 alias ls='ls --color=auto'
 alias ll='ls -halt'
+alias ..="cd .."
 alias grep='grep --color=auto'
 
 # Shell customization
