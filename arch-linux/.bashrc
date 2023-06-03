@@ -24,3 +24,6 @@ eval "$(dircolors)"
 
 # Wezterm
 alias wezterm="cd ~/dev/workflow/wezterm && cargo run --release --bin wezterm -- start"
+
+# Make it easier to switch from macOS
+alias open="xdg-open"
