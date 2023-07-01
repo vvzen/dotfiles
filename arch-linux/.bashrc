@@ -27,3 +27,8 @@ alias wezterm="cd ~/dev/workflow/wezterm && cargo run --release --bin wezterm --
 
 # Make it easier to switch from macOS
 alias open="xdg-open"
+
+# Doom Emacs
+export PATH="$HOME/.config/emacs/bin:$PATH"
+alias emacsdeamon="emacs --deamon &"
+alias emacsclient="emacsclient -c -a 'emacs'"
