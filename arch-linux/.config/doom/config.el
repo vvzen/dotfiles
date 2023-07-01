@@ -9,15 +9,26 @@
 (setq user-full-name "vvzen"
       user-mail-address "john@doe.com")
 
-;; Spacebar instead of ALT+X as leader key
-(map! :leader
-      :desc "Open like spacemacs" "SPC" #'counsel-M-x)
+;; Evil start of line (helix-like)
+(map! :n
+      "g h" #'evil-beginning-of-visual-line)
 
-;; Theme
-; (setq doom-theme 'doom-tomorrow-night)
+;; Evil end of line (helix-like)
+;; NOTE: 'g l' is already mapped natively to something else, so this overrides it
+(map! :after evil
+      :n
+      "g l" #'evil-end-of-visual-line)
+
+;; Easier way to comment lines
+(map! :n
+      "c c" #'evilnc-comment-or-uncomment-lines)
 
 ;; Fonts
-(setq doom-font (font-spec :family "Fira Code" :size 11 :weight 'bold))
+(setq doom-font
+      (font-spec :family "Fira Code" :size 11 :weight 'bold))
+
+(setq doom-unicode-font
+      (font-spec :family "Fira Code" :size 11 :weight 'bold))
 
 ;; Force tabs to be spaces
 (setq-default indent-tabs-mode nil)
