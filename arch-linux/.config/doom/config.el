@@ -30,8 +30,6 @@
 (setq doom-unicode-font
       (font-spec :family "Fira Code" :size 11 :weight 'bold))
 
-;; Force tabs to be spaces
-(setq-default indent-tabs-mode nil)
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
