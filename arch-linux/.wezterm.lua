@@ -95,7 +95,7 @@ config.font = wezterm.font {
   family = 'Fira Code',
   -- harfbuzz_features = { 'calt=1', 'clig=1', 'liga=1' }
 }
-config.font_size = 11.0
+config.font_size = 8.0
 
 -- Cursor
 config.default_cursor_style = 'BlinkingBar'
