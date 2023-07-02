@@ -9,18 +9,24 @@
 ;; (setq user-full-name "John Doe"
 ;;       user-mail-address "john@doe.com")
 
-;; Evil start of line (helix-like)
+;; Helix-like
+;;; Evil start of line
 (map! :n
       "g h" #'evil-beginning-of-visual-line)
 
-;; Evil end of line (helix-like)
-;; NOTE: 'g l' is already mapped natively to something else, so this overrides it
+;; Evil end of line
+;;; NOTE: 'g l' is already mapped natively to something else, so this overrides it
 (map! :after evil
       :nv
       "g l" #'evil-end-of-visual-line)
 
+;; Rename symbol
+(map! :leader
+      "r" #'lsp-rename)
+
 ;; Easier way to comment lines
-(map! :nv
+(map! :after evil
+      :nv
       "c c" #'evilnc-comment-or-uncomment-lines)
 
 ;; Styling
