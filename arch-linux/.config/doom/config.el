@@ -23,15 +23,18 @@
 (map! :nv
       "c c" #'evilnc-comment-or-uncomment-lines)
 
-;; Fonts
+;; Styling
 (setq doom-font
       (font-spec :family "Fira Code" :size 11 :weight 'bold))
 
 (setq doom-unicode-font
       (font-spec :family "Fira Code" :size 11 :weight 'bold))
 
-;; Theme
 (setq doom-theme 'doom-moonlight)
+
+(setq evil-normal-state-cursor '(bar "light blue")
+      evil-insert-state-cursor '(bar "medium sea green")
+      evil-visual-state-cursor '(hollow "purple"))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
