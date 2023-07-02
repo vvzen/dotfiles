@@ -16,11 +16,11 @@
 ;; Evil end of line (helix-like)
 ;; NOTE: 'g l' is already mapped natively to something else, so this overrides it
 (map! :after evil
-      :n
+      :nv
       "g l" #'evil-end-of-visual-line)
 
 ;; Easier way to comment lines
-(map! :n
+(map! :nv
       "c c" #'evilnc-comment-or-uncomment-lines)
 
 ;; Fonts
