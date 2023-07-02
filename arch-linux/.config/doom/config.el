@@ -14,20 +14,32 @@
 (map! :n
       "g h" #'evil-beginning-of-visual-line)
 
-;; Evil end of line
+;;; Evil end of line
 ;;; NOTE: 'g l' is already mapped natively to something else, so this overrides it
 (map! :after evil
       :nv
       "g l" #'evil-end-of-visual-line)
 
-;; Rename symbol
+;;; Rename symbol
 (map! :leader
       "r" #'lsp-rename)
 
-;; Easier way to comment lines
+;;; Easier way to comment lines
 (map! :after evil
       :nv
       "c c" #'evilnc-comment-or-uncomment-lines)
+
+;;; Next/Previous git diff
+;;; NOTE: natively this is ] d, I'm just used to the helix keybindings
+;;; and I don't want to re-adapt :)
+(map! :after evil
+      :nv
+      "] g" #'+vc-gutter/next-hunk)
+
+(map! :after evil
+      :nv
+      "[ g" #'+vc-gutter/previous-hunk)
+
 
 ;; Styling
 (setq doom-font
