@@ -9,6 +9,11 @@
 ;; (setq user-full-name "John Doe"
 ;;       user-mail-address "john@doe.com")
 
+;; Windows
+;; Maximize/Minimize a window
+(map! :leader
+      "z" #'zoom-window-zoom)
+
 ;; Helix-like
 ;;; Evil start of line
 (map! :n

@@ -28,7 +28,33 @@ alias wezterm="cd ~/dev/workflow/wezterm && cargo run --release --bin wezterm --
 # Make it easier to switch from macOS
 alias open="xdg-open"
 
+# Emacs
+# -----------------------------------------------------------------------------
+#
 # Doom Emacs
-export PATH="$HOME/.config/emacs/bin:$PATH"
-alias emacsdeamon="emacs --deamon &"
-alias emacsclient="emacsclient -c -a 'emacs'"
+if [ "$(echo "$PATH" | grep -c 'emacs/bin')" == 0 ]; then
+    export PATH="$HOME/.config/emacs/bin:$PATH"
+    alias emacsclient="emacsclient -c -a 'emacs'"
+fi
+
+# vterm integration
+vterm_printf() {
+    if [ -n "$TMUX" ] && ([ "${TERM%%-*}" = "tmux" ] || [ "${TERM%%-*}" = "screen" ]); then
+        # Tell tmux to pass the escape sequences through
+        printf "\ePtmux;\e\e]%s\007\e\\" "$1"
+    elif [ "${TERM%%-*}" = "screen" ]; then
+        # GNU screen (screen, screen-256color, screen-256color-bce)
+        printf "\eP\e]%s\007\e\\" "$1"
+    else
+        printf "\e]%s\e\\" "$1"
+    fi
+}
+
+vterm_prompt_end(){
+    vterm_printf "51;A$(whoami)@$(hostname):$(pwd)"
+}
+PS1=$PS1'\[$(vterm_prompt_end)\]'
+
+# Created by `pipx` on 2023-07-29 14:32:42
+export PATH="$PATH:/home/vv/.local/bin"
+eval "$(register-python-argcomplete pipx)"
