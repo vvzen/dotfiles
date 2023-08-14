@@ -5,6 +5,16 @@
 ;; on the command line, then restart Emacs for the changes to take effect -- or
 ;; use 'M-x doom/reload'.
 
+;; Functionality to achieve what PREFIX+Z achieves in Tmux
+(package! zoom-window)
+
+;; Markdown syntax highlighting in code blocks
+(package! poly-markdown
+  :pin 'melpa-stable)
+
+(package! wgsl-mode
+  :recipe (:host github :repo "acowley/wgsl-mode"
+           :files ("wgsl-mode.el")))
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)

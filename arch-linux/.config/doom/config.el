@@ -9,6 +9,15 @@
 ;; (setq user-full-name "John Doe"
 ;;       user-mail-address "john@doe.com")
 
+;; Splash Screen
+(setq fancy-splash-image
+      (expand-file-name "I-am-doom.png" doom-user-dir))
+
+;; For those times that I somehow enter vim
+;; from a vterm session in emacs :)
+(map! :leader
+      "d n e" #'turn-off-evil-mode)
+
 ;; Windows
 ;; Maximize/Minimize a window
 (map! :leader
@@ -45,6 +54,11 @@
       :nv
       "[ g" #'+vc-gutter/previous-hunk)
 
+;; Python stuff
+(global-tree-sitter-mode)
+(add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+(setq python-shell-interpreter "ipython")
+(setq python-shell-interpreter-args "-i --simple-prompt")
 
 ;; Styling
 (setq doom-font
@@ -53,11 +67,17 @@
 (setq doom-unicode-font
       (font-spec :family "Fira Code" :size 11 :weight 'bold))
 
-(setq doom-theme 'doom-moonlight)
+;; (setq doom-theme 'doom-moonlight)
+(setq doom-theme 'doom-dracula)
 
 (setq evil-normal-state-cursor '(bar "light blue")
       evil-insert-state-cursor '(bar "medium sea green")
       evil-visual-state-cursor '(hollow "purple"))
+
+;; Cursor
+(setq evil-normal-state-cursor '(bar "light blue")
+      evil-insert-state-cursor '(bar "medium sea green")
+      evil-visual-state-cursor '(hbar "light blue"))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
