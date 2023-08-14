@@ -13,6 +13,12 @@
 (setq fancy-splash-image
       (expand-file-name "I-am-doom.png" doom-user-dir))
 
+;; Copy/Paste utilities
+(defun copy-buffer-file-name-to-kill-ring ()
+  "Send the current name of the buffer to the kill ring"
+  (interactive)
+  (kill-new (buffer-file-name)))
+
 ;; For those times that I somehow enter vim
 ;; from a vterm session in emacs :)
 (map! :leader
