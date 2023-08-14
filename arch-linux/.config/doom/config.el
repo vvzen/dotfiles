@@ -21,6 +21,7 @@
 
 ;; For those times that I somehow enter vim
 ;; from a vterm session in emacs :)
+;; "Do Not Evil"
 (map! :leader
       "d n e" #'turn-off-evil-mode)
 
@@ -62,7 +63,10 @@
 
 ;; Python stuff
 (global-tree-sitter-mode)
+
+;; TODO: This feels a bit heavy handed?
 (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode)
+
 (setq python-shell-interpreter "ipython")
 (setq python-shell-interpreter-args "-i --simple-prompt")
 
@@ -73,17 +77,12 @@
 (setq doom-unicode-font
       (font-spec :family "Fira Code" :size 11 :weight 'bold))
 
-;; (setq doom-theme 'doom-moonlight)
 (setq doom-theme 'doom-dracula)
 
-(setq evil-normal-state-cursor '(bar "light blue")
-      evil-insert-state-cursor '(bar "medium sea green")
-      evil-visual-state-cursor '(hollow "purple"))
-
 ;; Cursor
-(setq evil-normal-state-cursor '(bar "light blue")
-      evil-insert-state-cursor '(bar "medium sea green")
-      evil-visual-state-cursor '(hbar "light blue"))
+(setq evil-normal-state-cursor '(bar "tan1")
+      evil-insert-state-cursor '(bar "SeaGreen1")
+      evil-visual-state-cursor '(hbar "turquoise1"))
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
