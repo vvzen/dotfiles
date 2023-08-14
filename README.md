@@ -13,6 +13,15 @@ I'm currently evaluating [wezterm](https://wezfurlong.org/wezterm/) both on arch
 As of 2023-04-29, the arch package was not working (404s), but it was an easy one to
 just `cargo build --release` following the install instructions.
 
+## Text editors
+
+I have been using helix editor since its early times.
+I love its philosophy and its 'all included' approach, which means I can install it and tweak a few lines in a config and I'm ready to write some code, no matter the platform I'm in.
+
+On the other hand, I have started (since June 2023) to use Doom Emacs and I love it for the opposite reasons: it's good fun to hack around with my config. Plus, it's an excuse to use a bit of LISP in my day to day programming life.
+
+- https://github.com/doomemacs/doomemacs
+- https://github.com/helix-editor/helix
 
 ## Generic utils
 
